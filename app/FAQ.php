@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class FAQ extends Model
 {
-    use FAQTrait,SoftDeletes;
+    use FAQTrait, SoftDeletes;
 
     protected $table = 'f_a_q_s';
     protected $fillable = [

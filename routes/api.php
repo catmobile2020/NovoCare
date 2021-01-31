@@ -23,6 +23,8 @@ Route::prefix('v1')->name('api.v1.')->namespace('API\V1')->group(function () {
 
     Route::get('faqs', 'FAQController@index');
 
+    Route::post('contact/store', 'ContactController@store');
+
     Route::fallback(function () {
         return response()->json([
             'message' => 'End Point Not found'
