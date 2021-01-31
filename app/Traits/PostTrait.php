@@ -22,6 +22,5 @@ trait PostTrait
      */
     protected function getUpdatedAtAttribute($date) {
         return Carbon::parse($date)->diffForHumans();
-
     }
 }
