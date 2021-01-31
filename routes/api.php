@@ -17,5 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('v1/posts', 'API\V1\PostController@index');
-Route::get('v1/posts/show', 'API\V1\PostController@show');
+Route::prefix('v1')->name('api.v1.')->namespace('API\V1')->group(function () {
+    Route::get('posts', 'PostController@index');
+    Route::get('posts/show', 'PostController@show');
+
+    Route::get('faqs', 'FAQController@index');
+
+    Route::fallback(function () {
+        return response()->json([
+            'message' => 'End Point Not found'
+        ], 404);
+    })->name('fallback');
+});

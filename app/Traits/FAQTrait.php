@@ -3,11 +3,11 @@
 
 namespace App\Traits;
 
+
 use Carbon\Carbon;
 
-trait PostTrait
+trait FAQTrait
 {
-
     /**
      * @param $date
      * @return string
