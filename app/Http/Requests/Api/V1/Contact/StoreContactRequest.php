@@ -6,7 +6,6 @@ namespace App\Http\Requests\Api\V1\Contact;
 use Dotenv\Exception\ValidationException;
 use \Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
 class StoreContactRequest extends FormRequest
 {
@@ -32,6 +31,11 @@ class StoreContactRequest extends FormRequest
             'email'     => 'required|min:5|email',
             'comment'   => 'required|min:5'
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new ValidationException(response()->json($validator->errors(), 422));
     }
 
 }
