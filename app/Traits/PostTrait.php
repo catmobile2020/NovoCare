@@ -13,7 +13,7 @@ trait PostTrait
      * @return string
      */
     protected function getCreatedAtAttribute($date){
-        return Carbon::parse($date)->diffForHumans();
+        return Carbon::parse($date)->format('l, j F Y');
     }
 
     /**
