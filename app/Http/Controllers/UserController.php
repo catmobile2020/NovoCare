@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateUser;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -77,8 +78,8 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param UpdateUser $request
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateUser $request, User $user)
