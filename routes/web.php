@@ -13,15 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes([
+    'register' => false
+]);
 
-Auth::routes();
-
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts', 'PostController');
 Route::patch('/posts/{post}/restore', 'PostController@restore')->name('posts.restore');
+
+Route::resource('faqs', 'FAQController');
+Route::patch('/faqs/{faq}/restore', 'FAQController@restore')->name('faqs.restore');
 
 Route::resource('users', 'UserController')->only(['show', 'edit', 'update', 'index']);

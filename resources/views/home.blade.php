@@ -1,23 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+    <div class="col-12">
+        <div class="jumbotron shadow-sm text-center" style="background-color: #d9f5ff;">
+            <img class="mx-auto d-block" src="{{ asset('media/novo-logo.png') }}" alt="">
+            <p class="lead">{{ __('Welcome text') }}</p>
         </div>
     </div>
-</div>
 @endsection
