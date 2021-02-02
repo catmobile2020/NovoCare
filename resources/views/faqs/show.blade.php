@@ -9,7 +9,7 @@
 
                     <h1 class="card-title">
                         {{ $faq->question }}
-                        @component('layouts.components.badge', ['show' => $faq->created_at > today()])
+                        @component('layouts.components.badge', ['show' => now()->diffInMinutes($faq->created_at) < 30])
                             New!
                         @endcomponent
                     </h1>
