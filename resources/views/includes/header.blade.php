@@ -14,6 +14,9 @@
             <li class="nav-item {{ Route::currentRouteName() == 'posts.index' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('posts.index') }}">{{ __("News Feed") }}</a>
             </li>
+            <li class="nav-item {{ Route::currentRouteName() == 'contacts.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('contacts.index') }}">{{ __("Contact") }}</a>
+            </li>
             <li class="nav-item {{ Route::currentRouteName() == 'faqs.index' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('faqs.index') }}">{{ __("FAQs") }}</a>
             </li>
@@ -22,10 +25,10 @@
             </li>
 
             @auth
-                <li class="nav-item {{ Route::currentRouteName() == 'users.index' ? 'active' : '' }}">
+                <li class="nav-item {{ Route::currentRouteName() == 'posts.index' ? 'active' : '' }}">
                     <a class="btn btn-sm btn-outline-success" href="{{ route('posts.create') }}">{{ __('Add Post') }}</a>
                 </li>
-                <li class="nav-item {{ Route::currentRouteName() == 'users.index' ? 'active' : '' }}">
+                <li class="nav-item {{ Route::currentRouteName() == 'faqs.index' ? 'active' : '' }}">
                     <a class="btn btn-sm btn-outline-success" href="{{ route('faqs.create') }}">{{ __('Add FAQ') }}</a>
                 </li>
             @endauth

@@ -27,3 +27,6 @@ Route::resource('faqs', 'FAQController');
 Route::patch('/faqs/{faq}/restore', 'FAQController@restore')->name('faqs.restore');
 
 Route::resource('users', 'UserController')->only(['show', 'edit', 'update', 'index']);
+
+Route::resource('contacts', 'ContactController');
+Route::patch('/contacts/{contact}/restore', 'ContactController@restore')->name('contacts.restore');
