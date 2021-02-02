@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('posts', 'PostController');
+Route::patch('/posts/{post}/restore', 'PostController@restore')->name('posts.restore');
+
+Route::resource('users', 'UserController')->only(['show', 'edit', 'update', 'index']);

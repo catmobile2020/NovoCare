@@ -4,11 +4,18 @@
 namespace App\Http\Resources;
 
 use \Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class PostResource extends JsonResource
 {
     public function toArray($request)
     {
+        if (Storage::exists($this->image)){
+            $this['image'] = asset(Storage::url($this->image));
+        }else {
+            $this['image'] = asset('media/default_image.png');
+        }
+
         return [
             'id'            => $this->id,
             'title'         => $this->title,

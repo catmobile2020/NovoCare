@@ -20,6 +20,8 @@ class Post extends Model
         'is_active',
     ];
 
+    protected $perPage = 15;
+
     protected $hidden = [
         'deleted_at',
     ];
