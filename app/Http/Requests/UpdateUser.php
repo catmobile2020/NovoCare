@@ -24,7 +24,8 @@ class UpdateUser extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:1|max:100',
+            'email' => 'required|min:1|max:100|email',
         ];
     }
 }

@@ -6,9 +6,9 @@
             <div class="card col-lg-2 col-sm-4 col-md-4 border-1 mr-1 ml-1 shadow-sm">
                 <img class="card-img pt-2 rounded" src="{{ asset('media/no-image-user.png') }}" alt="Card image cap">
                 <div class="card-body">
-                    <p class="card-text d-flex justify-content-between align-items-center">
+                    <h4 class="card-text d-flex justify-content-between align-items-center">
                         <a href="{{ route('users.show', ['user' => $user->id]) }}" class="card-link">{{ $user->name }}</a>
-                    </p>
+                    </h4>
                 </div>
             </div>
         @empty

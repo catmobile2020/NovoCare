@@ -17,6 +17,10 @@
                     <label for="name">{{ __('Name') }}</label>
                     <input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}"/>
                 </div>
+                <div class="form-group">
+                    <label for="email">{{ __('Email') }}</label>
+                    <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}"/>
+                </div>
 
 
                 @component('layouts.components.errors')
