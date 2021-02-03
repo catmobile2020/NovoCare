@@ -26,6 +26,9 @@
 @if (Route::currentRouteName() == 'posts.edit'
     || Route::currentRouteName() == 'posts.create'
     || Route::currentRouteName() == 'posts.show'
+    || Route::currentRouteName() == 'abouts.edit'
+    || Route::currentRouteName() == 'privacies.edit'
+    || Route::currentRouteName() == 'terms.edit'
     || Route::currentRouteName() == 'users.show')
     @include('includes.tinymce')
 @endif

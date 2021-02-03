@@ -30,3 +30,9 @@ Route::resource('users', 'UserController')->only(['show', 'edit', 'update', 'ind
 
 Route::resource('contacts', 'ContactController');
 Route::patch('/contacts/{contact}/restore', 'ContactController@restore')->name('contacts.restore');
+
+Route::resource('abouts', 'AboutController');
+
+Route::resource('privacies', 'PrivacyController');
+
+Route::resource('terms', 'TermsController');

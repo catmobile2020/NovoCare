@@ -27,6 +27,7 @@ Route::prefix('v1')->name('api.v1.')->namespace('API\V1')->group(function () {
 
     Route::get('abouts', 'AboutController@index');
     Route::get('terms', 'TermsController@index');
+    Route::get('privacy', 'PrivacyController@index');
 
     Route::post('contact/store', 'ContactController@store');
 

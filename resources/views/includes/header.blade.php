@@ -8,8 +8,8 @@
     </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
         <ul class="navbar-nav d-flex align-items-center">
-{{--            <li class="nav-item {{ Route::currentRouteName() == 'about' ? 'active' : '' }}">--}}
-{{--                <a class="nav-link" href="{{ route('about') }}">{{ __('About') }}</a>--}}
+{{--            <li class="nav-item {{ Route::currentRouteName() == 'abouts' ? 'active' : '' }}">--}}
+{{--                <a class="nav-link" href="{{ route('abouts') }}">{{ __('About') }}</a>--}}
 {{--            </li>--}}
             <li class="nav-item {{ Route::currentRouteName() == 'posts.index' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('posts.index') }}">{{ __("News Feed") }}</a>
@@ -22,6 +22,15 @@
             </li>
             <li class="nav-item {{ Route::currentRouteName() == 'users.index' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
+            </li>
+            <li class="nav-item {{ Route::currentRouteName() == 'abouts.edit' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('abouts.edit', '1') }}">{{ __('About App') }}</a>
+            </li>
+            <li class="nav-item {{ Route::currentRouteName() == 'terms.edit' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('terms.edit', '1') }}">{{ __('Terms of Use') }}</a>
+            </li>
+            <li class="nav-item {{ Route::currentRouteName() == 'privacies.edit' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('privacies.edit', '1') }}">{{ __('Privacy Statement') }}</a>
             </li>
 
             @auth

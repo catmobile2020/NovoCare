@@ -10418,7 +10418,7 @@ jQuery.extend( {
 
 
 // These usually indicate a programmer mistake during development,
-// warn about them ASAP rather than swallowing them by default.
+// warn abouts them ASAP rather than swallowing them by default.
 var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
 
 jQuery.Deferred.exceptionHook = function( error, stack ) {
@@ -11227,7 +11227,7 @@ function showHide( elements, show ) {
 
 			// Since we force visibility upon cascade-hidden elements, an immediate (and slow)
 			// check is required in this first loop unless we have a nonempty display value (either
-			// inline or about-to-be-restored)
+			// inline or abouts-to-be-restored)
 			if ( display === "none" ) {
 				values[ index ] = dataPriv.get( elem, "display" ) || null;
 				if ( !values[ index ] ) {
@@ -36593,7 +36593,7 @@ var modifiers = {
    * Modifier used to make sure the reference and its popper stay near each other
    * without leaving any gap between the two. Especially useful when the arrow is
    * enabled and you want to ensure that it points to its reference element.
-   * It cares only about the first axis. You can still have poppers with margin
+   * It cares only abouts the first axis. You can still have poppers with margin
    * between the popper and its reference element.
    * @memberof modifiers
    * @inner
@@ -40990,7 +40990,7 @@ function installComponentHooks (data) {
 
 function mergeHook$1 (f1, f2) {
   var merged = function (a, b) {
-    // flow complains about extra args which is why we use any
+    // flow complains abouts extra args which is why we use any
     f1(a, b);
     f2(a, b);
   };
@@ -49688,7 +49688,7 @@ try {
 	if (typeof window === "object") g = window;
 }
 
-// g can still be undefined, but nothing to do about it...
+// g can still be undefined, but nothing to do abouts it...
 // We return undefined, instead of nothing here, so it's
 // easier to handle this case. if(!global) { ...}
 
