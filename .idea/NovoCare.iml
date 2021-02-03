@@ -108,9 +108,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/ui" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/image" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/yoeunes/toastr" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/mews/purifier" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

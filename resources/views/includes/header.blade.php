@@ -35,10 +35,10 @@
 
             @auth
                 <li class="nav-item {{ Route::currentRouteName() == 'posts.index' ? 'active' : '' }}">
-                    <a class="btn btn-sm btn-outline-success" href="{{ route('posts.create') }}">{{ __('Add Post') }}</a>
+                    <a class="btn btn-sm btn-outline-primary btn-create" href="{{ route('posts.create') }}">{{ __('Add Post') }}</a>
                 </li>
                 <li class="nav-item {{ Route::currentRouteName() == 'faqs.index' ? 'active' : '' }}">
-                    <a class="btn btn-sm btn-outline-success" href="{{ route('faqs.create') }}">{{ __('Add FAQ') }}</a>
+                    <a class="btn btn-sm btn-outline-primary btn-create" href="{{ route('faqs.create') }}">{{ __('Add FAQ') }}</a>
                 </li>
             @endauth
         </ul>

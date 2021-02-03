@@ -167,8 +167,6 @@ return [
          */
         Intervention\Image\ImageServiceProvider::class,
         App\Providers\ConfigurationServiceProvider::class,
-        Yoeunes\Toastr\ToastrServiceProvider::class,
-        Mews\Purifier\PurifierServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -230,7 +228,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Purifier' => Mews\Purifier\Facades\Purifier::class,
     ],
 
 ];

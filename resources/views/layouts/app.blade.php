@@ -8,8 +8,8 @@
 
     <link rel="icon" type="image/png" sizes="128x128" href="{{ config('configurations.logo') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <title>{{ $meta_title ?? 'NovoCare'}}</title>
-    @toastr_css
+    <link rel="stylesheet" href="{{ asset('css/style.min.css') }}">
+    <title>{{ $meta_title ?? config('configurations.app_name')}}</title>
 </head>
 <body id="app">
 
@@ -32,8 +32,5 @@
     || Route::currentRouteName() == 'users.show')
     @include('includes.tinymce')
 @endif
-@jquery
-@toastr_js
-@toastr_render
 </body>
 </html>
