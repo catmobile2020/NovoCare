@@ -6,15 +6,24 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
+                    <div> (EN)
+                        <h1 class="card-title">
+                            {{ $faq->en_question }}
+                            @component('layouts.components.badge', ['show' => now()->diffInMinutes($faq->created_at) < 30])
+                                New!
+                            @endcomponent
+                        </h1>
+                        <p class="card-text">{!! $faq->en_answer !!}</p>
+                    </div>
 
-                    <h1 class="card-title">
-                        {{ $faq->question }}
-                        @component('layouts.components.badge', ['show' => now()->diffInMinutes($faq->created_at) < 30])
-                            New!
-                        @endcomponent
-                    </h1>
+                    <div> (AR)
+                        <h1 class="card-title">
+                            {{ $faq->ar_question }}
+                        </h1>
 
-                    <p class="card-text">{!! $faq->answer !!}</p>
+                        <p class="card-text">{!! $faq->ar_answer !!}</p>
+
+                    </div>
 
                     <div class="d-flex justify-content-around">
                         <p class="card-text">

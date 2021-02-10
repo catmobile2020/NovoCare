@@ -16,15 +16,33 @@ class PostResource extends JsonResource
             $this['image'] = asset('media/default_image.png');
         }
 
-        return [
-            'id'            => $this->id,
-            'title'         => $this->title,
-            'slug'          => $this->slug,
-            'caption'       => $this->caption,
-            'image'         => asset($this->image),
-            'text'          => $this->text,
-            'created_at'    => (string)$this->created_at,
-            'updated_at'    => (string)$this->updated_at
-        ];
+        $data = [];
+
+        if ($request['lang'] == 'ar'){
+            $data = [
+                'id'            => $this->id,
+                'title'         => $this->ar_title,
+                'slug'          => $this->slug,
+                'caption'       => $this->ar_caption,
+                'image'         => asset($this->image),
+                'text'          => $this->ar_text,
+                'created_at'    => (string)$this->created_at,
+                'updated_at'    => (string)$this->updated_at
+            ];
+        }else {
+            $data = [
+                'id'            => $this->id,
+                'title'         => $this->en_title,
+                'slug'          => $this->slug,
+                'caption'       => $this->en_caption,
+                'image'         => asset($this->image),
+                'text'          => $this->en_text,
+                'created_at'    => (string)$this->created_at,
+                'updated_at'    => (string)$this->updated_at
+            ];
+        }
+
+
+        return $data;
     }
 }

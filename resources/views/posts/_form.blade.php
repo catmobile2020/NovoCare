@@ -1,21 +1,42 @@
 <div class="form-group">
     <p>
-        <label for="title">{{ __('Title') }}</label>
-        <input class="form-control" type="text" id="title" name="title" value="{{ old('title', $post->title ?? null) }}"/>
+        <label for="en_title">{{ __('Title') }} (EN)</label>
+        <input class="form-control" type="text" id="en_title" name="en_title" value="{{ old('en_title', $post->en_title ?? null) }}"/>
     </p>
 </div>
 
 <div class="form-group">
     <p>
-        <label for="caption">{{ __('Caption') }}</label>
-        <textarea rows="3" class="form-control" type="text" id="caption" name="caption">{{ old('caption', $post->caption ?? null) }}</textarea>
+        <label for="en_caption">{{ __('Caption') }} (EN)</label>
+        <textarea rows="3" class="form-control" type="text" id="en_caption" name="en_caption">{{ old('en_caption', $post->en_caption ?? null) }}</textarea>
     </p>
 </div>
 
 <div class="form-group">
     <p>
-        <label for="text">{{ __('Text') }}</label>
-        <textarea rows="10" class="form-control fn_post_editor" type="text" id="text" name="text">{{ old('text', $post->text ?? null) }}</textarea>
+        <label for="en_text">{{ __('Text') }} (EN)</label>
+        <textarea rows="10" class="form-control fn_post_editor" type="text" id="en_text" name="en_text">{{ old('en_text', $post->en_text ?? null) }}</textarea>
+    </p>
+</div>
+
+<div class="form-group">
+    <p>
+        <label for="ar_title">{{ __('Title') }} (AR)</label>
+        <input class="form-control" type="text" id="ar_title" name="ar_title" value="{{ old('ar_title', $post->ar_title ?? null) }}"/>
+    </p>
+</div>
+
+<div class="form-group">
+    <p>
+        <label for="ar_caption">{{ __('Caption') }} (AR)</label>
+        <textarea rows="3" class="form-control" type="text" id="ar_caption" name="ar_caption">{{ old('ar_caption', $post->ar_caption ?? null) }}</textarea>
+    </p>
+</div>
+
+<div class="form-group">
+    <p>
+        <label for="ar_text">{{ __('Text') }} (AR)</label>
+        <textarea rows="10" class="form-control fn_post_editor" type="text" id="ar_text" name="ar_text">{{ old('ar_text', $post->ar_text ?? null) }}</textarea>
     </p>
 </div>
 

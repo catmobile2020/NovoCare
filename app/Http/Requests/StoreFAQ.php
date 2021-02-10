@@ -24,8 +24,10 @@ class StoreFAQ extends FormRequest
     public function rules()
     {
         return [
-            'question' => 'required|min:5|max:100',
-            'answer' => 'required|min:5'
+            'en_question' => 'required|min:5|max:100',
+            'en_answer' => 'required|min:5',
+            'ar_question' => 'required|min:5|max:100',
+            'ar_answer' => 'required|min:5',
         ];
     }
 }

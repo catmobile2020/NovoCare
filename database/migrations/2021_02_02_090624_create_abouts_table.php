@@ -15,9 +15,10 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('image')->nullable();
-            $table->text('caption');
+            $table->string('en_title');
+            $table->text('en_caption');
+            $table->string('ar_title');
+            $table->text('ar_caption');
             $table->timestamps();
         });
     }

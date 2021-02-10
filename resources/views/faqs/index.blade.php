@@ -18,14 +18,14 @@
                                href="{{ route('faqs.show', ['faq' => $faq->id]) }}"
                                style="text-decoration: none"
                             >
-                                {{ $faq->question }}
+                                {{ $faq->en_question }}
                             </a>
                         </h4>
 
 
                         <p class="card-text">
                             <small class="text-muted">
-                                {{ $faq->answer }}
+                                {{ $faq->en_answer }}
                             </small>
                         </p>
                     </div>

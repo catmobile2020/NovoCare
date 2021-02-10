@@ -11,7 +11,7 @@ class ConfigController extends Controller
         $data['app_name'] = config('configurations.app_name');
         $data['mobile_number'] = config('configurations.mobile_number');
         $data['location_address'] = config('configurations.location_address');
-        $data['logo'] = config('configurations.logo');
+        $data['logo'] = asset(config('configurations.logo'));
 
         return response()->json([
             'status' => '200',

@@ -15,9 +15,11 @@ class CreateFAQSTable extends Migration
     {
         Schema::create('f_a_q_s', function (Blueprint $table) {
             $table->id();
-            $table->string('question', 255)->index();
+            $table->string('en_question', 255)->index();
+            $table->string('ar_question', 255)->index();
             $table->string('slug', 255)->index();
-            $table->text('answer');
+            $table->text('en_answer');
+            $table->text('ar_answer');
             $table->boolean('is_active')->default(true);
             $table->softDeletes();
             $table->timestamps();

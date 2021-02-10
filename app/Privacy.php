@@ -8,7 +8,9 @@ class Privacy extends Model
 {
     protected $table = 'privacies';
     protected $fillable = [
-        'title',
-        'caption',
+        'en_title',
+        'en_caption',
+        'ar_title',
+        'ar_caption',
     ];
 }

@@ -1,16 +1,28 @@
 <div class="form-group">
     <p>
-        <label for="title">{{ __('Title') }}</label>
-        <input class="form-control" type="text" id="title" name="title" value="{{ old('title', $terms->title ?? null) }}"/>
+        <label for="en_title">{{ __('Title') }} (EN)</label>
+        <input class="form-control" type="text" id="en_title" name="en_title" value="{{ old('en_title', $terms->en_title ?? null) }}"/>
     </p>
 </div>
 
 <div class="form-group">
     <p>
-        <label for="caption">{{ __('Caption') }}</label>
-        <textarea rows="3" class="form-control fn_post_editor" type="text" id="caption" name="caption">{{ old('caption', $terms->caption ?? null) }}</textarea>
+        <label for="en_caption">{{ __('Caption') }} (EN)</label>
+        <textarea rows="3" class="form-control fn_post_editor" type="text" id="en_caption" name="en_caption">{{ old('en_caption', $terms->en_caption ?? null) }}</textarea>
+    </p>
+</div>
+<div class="form-group">
+    <p>
+        <label for="ar_title">{{ __('Title') }} (AR)</label>
+        <input class="form-control" type="text" id="ar_title" name="ar_title" value="{{ old('ar_title', $terms->ar_title ?? null) }}"/>
     </p>
 </div>
 
+<div class="form-group">
+    <p>
+        <label for="ar_caption">{{ __('Caption') }} (AR)</label>
+        <textarea rows="3" class="form-control fn_post_editor" type="text" id="ar_caption" name="ar_caption">{{ old('ar_caption', $terms->ar_caption ?? null) }}</textarea>
+    </p>
+</div>
 @component('layouts.components.errors')
 @endcomponent

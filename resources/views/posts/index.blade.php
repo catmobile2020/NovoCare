@@ -18,14 +18,14 @@
                                href="{{ route('posts.show', ['post' => $post->id]) }}"
                                style="text-decoration: none"
                             >
-                                {{ $post->title }}
+                                {{ $post->en_title }}
                             </a>
                         </h4>
 
 
                         <p class="card-text">
                             <small class="text-muted">
-                                {{ $post->caption }}
+                                {{ $post->en_caption }}
                             </small>
                         </p>
                     </div>

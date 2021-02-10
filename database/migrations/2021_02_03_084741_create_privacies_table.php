@@ -15,8 +15,10 @@ class CreatePrivaciesTable extends Migration
     {
         Schema::create('privacies', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('caption');
+            $table->string('en_title');
+            $table->text('en_caption');
+            $table->string('ar_title');
+            $table->text('ar_caption');
             $table->timestamps();
         });
     }

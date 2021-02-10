@@ -8,7 +8,9 @@ class Terms extends Model
 {
     protected $table = 'terms';
     protected $fillable = [
-        'title',
-        'caption',
+        'en_title',
+        'en_caption',
+        'ar_title',
+        'ar_caption',
     ];
 }

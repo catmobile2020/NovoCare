@@ -24,9 +24,12 @@ class StorePost extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'bail|required|min:5|max:100',
-            'caption' => 'required|min:5',
-            'text' => 'required|min:5',
+            'en_title' => 'bail|required|min:5|max:100',
+            'en_caption' => 'required|min:5',
+            'en_text' => 'required|min:5',
+            'ar_title' => 'bail|required|min:5|max:100',
+            'ar_caption' => 'required|min:5',
+            'ar_text' => 'required|min:5',
             'image' => 'image|mimes:jpg,jpeg,png'
         ];
     }

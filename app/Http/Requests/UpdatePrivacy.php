@@ -24,8 +24,10 @@ class UpdatePrivacy extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:5|max:100',
-            'caption' => 'required|min:5'
+            'en_title' => 'required|min:5|max:100',
+            'en_caption' => 'required|min:5',
+            'ar_title' => 'required|min:5|max:100',
+            'ar_caption' => 'required|min:5',
         ];
     }
 }

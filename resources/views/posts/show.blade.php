@@ -8,19 +8,23 @@
                 <div class="card-body">
 
                     <h1 class="card-title">
-                        {{ $post->title }}
+                        {{ $post->en_title }}
+                        {{ $post->ar_title }}
                         @component('layouts.components.badge', ['show' => now()->diffInMinutes($post->created_at) < 30])
                             New!
                         @endcomponent
                     </h1>
+
+                    <p class="card-text">{!! $post->en_caption !!}</p>
+                    <p class="card-text">{!! $post->ar_caption !!}</p>
 
                     @if ($post->image)
                         <img class="card-img mb-3" src="{{ $post->image }}" alt="{{ $post->title }}">
                     @endif
 
 
-                    <p class="card-text">{!! $post->caption !!}</p>
-                    <p class="card-text">{!! $post->text !!}</p>
+                    <p class="card-text">{!! $post->en_text !!}</p>
+                    <p class="card-text">{!! $post->ar_text !!}</p>
 
                     <div class="d-flex justify-content-around">
                         <p class="card-text">

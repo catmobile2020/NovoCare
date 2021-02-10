@@ -12,9 +12,11 @@ class FAQ extends Model
 
     protected $table = 'f_a_q_s';
     protected $fillable = [
-        'question',
+        'en_question',
+        'ar_question',
         'slug',
-        'answer',
+        'en_answer',
+        'ar_answer',
         'is_active',
     ];
 
