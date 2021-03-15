@@ -18,6 +18,6 @@ class PostController extends Controller
         );
     }
     public function show(Post $post, Request $request){
-        return PostResource::collection($post->where('slug', $request->slug)->get());
+        return PostResource::collection($post->where('id', $request->id)->get());
     }
 }
