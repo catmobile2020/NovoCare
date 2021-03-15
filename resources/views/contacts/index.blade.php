@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="card shadow-sm mb-4 border-success border-top-0 border-right-0 border-bottom-0">
+            <div class=" mb-4 border-success border-top-0 border-right-0 border-bottom-0">
                 <div class="card-body">
                     <h1 class="card-title">Contact Us Table</h1>
                     <div class="table-responsive">

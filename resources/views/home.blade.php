@@ -13,7 +13,7 @@
     <!-- End of Customerly Live Chat Snippet Code -->
     <div class="col-12">
         <div class="jumbotron shadow-sm text-center" style="background-color: #d9f5ff;">
-            <img class="mx-auto d-block" src="{{ asset('media/novo-logo.png') }}" alt="">
+            <img class="mx-auto d-block img-fluid" src="{{ asset('media/novo-logo.png') }}" alt="">
             <p class="lead">{{ __('Welcome text') }}</p>
         </div>
     </div>
