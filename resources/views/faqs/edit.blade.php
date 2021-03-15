@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('page-name', 'FAQs - Edit')
+
 @section('content')
 
     <h1>{{ __('Update FAQ') }}</h1>

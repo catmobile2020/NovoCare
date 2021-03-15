@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('page-name', 'FAQs - Show')
 @section('content')
     <div class="row">
 

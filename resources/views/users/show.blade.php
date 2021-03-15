@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page-name', 'User - Show')
 
 @section('content')
     <div class="row d-flex justify-content-center">

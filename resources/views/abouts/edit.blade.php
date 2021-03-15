@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('page-name', 'About us')
 @section('content')
 
     <h1>{{ __('Update About of App') }}</h1>

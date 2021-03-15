@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page-name', 'User - Edit')
 
 @section('content')
     <form action="{{ route('users.update', ['user' => $user->id]) }}"

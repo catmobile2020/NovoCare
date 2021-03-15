@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page-name', 'Users')
 
 @section('content')
     <div class="card-columns row d-flex justify-content-center">
