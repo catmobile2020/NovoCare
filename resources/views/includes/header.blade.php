@@ -51,6 +51,11 @@
                     <i class="fas fa-users"></i>
                     <span>Users</span></a>
             </li>
+            <li class="nav-item {{ Route::currentRouteName() == 'homes.edit' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('homes.edit', '1') }}">
+                    <i class="fas fa-list-ul"></i>
+                    <span>Home Page</span></a>
+            </li>
             <li class="nav-item {{ Route::currentRouteName() == 'abouts.edit' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('abouts.edit', '1') }}">
                     <i class="fas fa-list-ul"></i>
