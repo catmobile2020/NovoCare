@@ -23,7 +23,7 @@ class ContactController extends Controller
             return response()->json([
                 'status' => 400,
                 'error' => $validator->messages(),
-            ]);
+            ], '400');
         }
 
         $contact = $contact->create($request->all());
