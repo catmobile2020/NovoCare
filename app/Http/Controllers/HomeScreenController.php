@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\DeleteOldFile;
+use App\Helper\StoreFile;
 use App\Home;
 use App\Http\Requests\UpdateHomes;
 use Illuminate\Http\Request;
@@ -80,7 +82,13 @@ class HomeScreenController extends Controller
         $validateData = $request->validated();
 
         $homes->fill($validateData);
-
+        if ($request->hasFile('file')) {
+            if(isset($homes->file)){
+                DeleteOldFile::delete($homes->file);
+            }
+            $imageName = StoreFile::save($request->file, 'home');
+            $validateData['file'] = $imageName;
+        }
         $homes->save();
         $request->session()->flash('status', __('Home was Updated'));
 
