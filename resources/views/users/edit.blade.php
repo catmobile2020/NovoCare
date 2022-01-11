@@ -14,6 +14,7 @@
                 <img class="img-thumbnail avatar" src="{{ asset('media/no-image-user.png') }}" alt="">
             </div>
             <div class="col-8">
+
                 <div class="form-group">
                     <label for="name">{{ __('Name') }}</label>
                     <input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}"/>
@@ -21,6 +22,10 @@
                 <div class="form-group">
                     <label for="email">{{ __('Email') }}</label>
                     <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}"/>
+                </div>
+                <div class="form-group">
+                    <label for="password">{{ __('Password') }}</label>
+                    <input id="password" type="password" class="form-control" name="password" />
                 </div>
 
 

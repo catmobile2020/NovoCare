@@ -22,6 +22,12 @@
                     @if ($post->image)
                         <img class="card-img mb-3" src="{{ $post->image }}" alt="{{ $post->title }}">
                     @endif
+                    @if ($post->video)
+                        <video width="320" height="240" controls>
+                            <source src="{{ $post->video }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    @endif
 
 
                     <p class="card-text">{!! $post->en_text !!}</p>

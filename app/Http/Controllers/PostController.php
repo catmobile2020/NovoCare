@@ -32,10 +32,13 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
-        if (Storage::exists($post->image)){
+        if (Storage::exists($post->image)) {
             $post['image'] = asset(Storage::url($post->image));
-        }else {
+        } else {
             $post['image'] = asset('media/default_image.png');
+        }
+        if (Storage::exists($post->video)) {
+            $post['video'] = asset(Storage::url($post->video));
         }
 
         return view('posts.show', [
@@ -54,12 +57,17 @@ class PostController extends Controller
         $validateData = $request->validated();
         $validateData['slug'] = Str::slug($request->title);
 
-
-
         if ($request->hasFile('image')) {
             unset($validateData['image']);
             $imageName = StoreFile::save($request->image, 'posts');
             $validateData['image'] = $imageName;
+        }
+
+        if ($request->hasFile('video')) {
+            unset($validateData['video']);
+            $videoName = '/posts/' . time() . '.' . $request->file('video')->extension();
+            Storage::putFileAs('/', $request->file('video'), $videoName);
+            $validateData['video'] = $videoName;
         }
 
         $post = Post::create($validateData);
@@ -86,16 +94,24 @@ class PostController extends Controller
 
         $validateData = $request->validated();
 
-        $post->fill($validateData);
-
         if ($request->hasFile('image')) {
-            if(isset($post->photo)){
+            if (isset($post->photo)) {
                 DeleteOldFile::delete($post->photo);
             }
             $imageName = StoreFile::save($request->image, 'posts');
             $validateData['image'] = $imageName;
         }
+        if ($request->hasFile('video')) {
+            if (isset($post->video)) {
+                DeleteOldFile::delete($post->video);
+            }
+            unset($validateData['video']);
+            $videoName = '/posts/' . time() . '.' . $request->file('video')->extension();
+            Storage::putFileAs('/', $request->file('video'), $videoName);
+            $validateData['video'] = $videoName;
+        }
 
+        $post->fill($validateData);
         $post->save();
         $request->session()->flash('status', __('Post was updeted'));
 

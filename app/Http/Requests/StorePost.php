@@ -30,7 +30,8 @@ class StorePost extends FormRequest
             'ar_title' => 'bail|required|min:5|max:100',
             'ar_caption' => 'required|min:5',
             'ar_text' => 'required|min:5',
-            'image' => 'image|mimes:jpg,jpeg,png'
+            'image' => 'image|mimes:jpg,jpeg,png',
+            'video' => 'nullable|mimes:mp4,mov,ogg,qt'
         ];
     }
 }

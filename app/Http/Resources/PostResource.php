@@ -25,6 +25,7 @@ class PostResource extends JsonResource
                 'slug'          => $this->slug,
                 'caption'       => $this->ar_caption,
                 'image'         => asset($this->image),
+                'video'         => asset($this->video),
                 'text'          => $this->ar_text,
                 'created_at'    => (string)$this->created_at,
                 'updated_at'    => (string)$this->updated_at
@@ -36,6 +37,7 @@ class PostResource extends JsonResource
                 'slug'          => $this->slug,
                 'caption'       => $this->en_caption,
                 'image'         => asset($this->image),
+                'video'         => asset($this->video),
                 'text'          => $this->en_text,
                 'created_at'    => (string)$this->created_at,
                 'updated_at'    => (string)$this->updated_at

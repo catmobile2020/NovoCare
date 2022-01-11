@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('en_caption', 255);
             $table->string('ar_caption', 255);
             $table->string('image', 255);
+            $table->string('video', 255)->nullable();
             $table->text('en_text');
             $table->text('ar_text');
             $table->boolean('is_active')->default(true);

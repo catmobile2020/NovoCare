@@ -47,6 +47,13 @@
     </p>
 </div>
 
+<div class="form-group">
+    <p>
+        <label for="image">{{ __('Video') }}</label>
+        <input class="form-control-file" type="file" id="video" name="video" value=""/>
+    </p>
+</div>
+
 
 <div class="form-group">
     <p>
