@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class HomeResource extends JsonResource
 {
@@ -20,12 +21,12 @@ class HomeResource extends JsonResource
 
         if ($request['lang'] == 'ar'){
             $data = [
-                'image' => asset($this->image),
+                'image' => asset(Storage::url($this->image)),
                 'caption' => $this->ar_caption
             ];
         }else {
             $data = [
-                'image' => asset($this->image),
+                'image' => asset(Storage::url($this->image)),
                 'caption' => $this->en_caption
             ];
         }

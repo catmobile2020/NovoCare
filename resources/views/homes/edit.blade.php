@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('page-name', 'Terms')
+@section('page-name', 'Home Page')
 
 @section('content')
 
-    <h1>{{ __('Update Terms of Use') }}</h1>
-    <form action="{{ route('homes.update', '1') }}" method="POST">
+    <h1>{{ __('Update Home Page') }}</h1>
+    <form action="{{ route('homes.update', '1') }}" method="POST"  enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

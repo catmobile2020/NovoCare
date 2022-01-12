@@ -54,13 +54,20 @@
     </p>
 </div>
 
+<div class="form-group">
+    <p>
+        <label for="image">{{ __('Video URL') }}</label>
+        <input class="form-control" type="url" id="video" name="video_url" value="{{ old('video_url', $post->video_url ?? null) }}"/>
+        <small>If it Null, video will take a video file</small>
+    </p>
+</div>
 
 <div class="form-group">
     <p>
         <label for="is_active">{{ __('Status') }}</label>
         <select class="form-control" id="is_active" name="is_active">
-            <option {{ old('is_active', $post->isActive ?? 'selected') }} value="{{ true }}">Active</option>
-            <option {{ old('is_active', $post->isActive ?? 'selected') }} value="{{ false }}">Nonactive</option>
+            <option {{ old('is_active', $post->is_active ?? 'selected') }} value="{{ true }}">Active</option>
+            <option {{ old('is_active', $post->is_active ?? 'selected') }} value="{{ false }}">Nonactive</option>
         </select>
     </p>
 </div>

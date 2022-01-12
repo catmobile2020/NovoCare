@@ -1,7 +1,8 @@
 <div class="form-group">
     <p>
         <label>{{ __('Image') }} <input type="file" name="image" value="{{ $homes->image }}"/></label>
-        <img src="{{ asset($homes->image) }}" width="300">
+        <small>The dimensioned must be 375*302</small>
+        <img src="{{ $homes->image }}" width="300">
     </p>
 </div>
 

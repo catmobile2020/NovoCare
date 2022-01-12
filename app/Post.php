@@ -21,6 +21,7 @@ class Post extends Model
         'ar_caption',
         'image',
         'video',
+        'video_url',
         'text',
         'en_text',
         'ar_text',

@@ -15,6 +15,13 @@ class PostResource extends JsonResource
         }else {
             $this['image'] = asset('media/default_image.png');
         }
+        if (Storage::exists($this->video)){
+            $this['video'] = asset(Storage::url($this->video));
+        }elseif(isset($this->video_url)) {
+            $this['video'] = $this->video_url;
+        }else {
+            $this['video'] = null;
+        }
 
         $data = [];
 
@@ -25,7 +32,7 @@ class PostResource extends JsonResource
                 'slug'          => $this->slug,
                 'caption'       => $this->ar_caption,
                 'image'         => asset($this->image),
-                'video'         => asset($this->video),
+                'video'         => $this->video,
                 'text'          => $this->ar_text,
                 'created_at'    => (string)$this->created_at,
                 'updated_at'    => (string)$this->updated_at
@@ -37,7 +44,7 @@ class PostResource extends JsonResource
                 'slug'          => $this->slug,
                 'caption'       => $this->en_caption,
                 'image'         => asset($this->image),
-                'video'         => asset($this->video),
+                'video'         => $this->video,
                 'text'          => $this->en_text,
                 'created_at'    => (string)$this->created_at,
                 'updated_at'    => (string)$this->updated_at

@@ -24,7 +24,7 @@ class UpdateHomes extends FormRequest
     public function rules()
     {
         return [
-//            'image'         => 'nullable|image',
+            'image'         => 'nullable|image|mimes:jpeg,jpg,png|dimensions:width=375,height=302',
             'en_caption'    => 'required|min:5',
             'ar_caption'    => 'required|min:5'
         ];

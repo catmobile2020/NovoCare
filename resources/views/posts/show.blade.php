@@ -27,6 +27,9 @@
                             <source src="{{ $post->video }}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                        
+                    @else
+                        <a href="{{ $post->video_url }}">{{ $post->video_url }}</a>
                     @endif
 
 

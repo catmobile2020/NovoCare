@@ -7,6 +7,7 @@ use App\Helper\StoreFile;
 use App\Home;
 use App\Http\Requests\UpdateHomes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeScreenController extends Controller
 {
@@ -61,7 +62,11 @@ class HomeScreenController extends Controller
     public function edit($id)
     {
         $homes = Home::findOrFail($id);
-
+        if (Storage::exists($homes->image)){
+            $homes['image'] = asset(Storage::url($homes->image));
+        }else {
+            $homes['image'] = asset('media/default_image.png');
+        }
         return view('homes.edit', [
             'homes' => $homes,
             'meta_title' => __('Update Home Screen')
@@ -81,16 +86,19 @@ class HomeScreenController extends Controller
 
         $validateData = $request->validated();
 
-        $homes->fill($validateData);
-        if ($request->hasFile('file')) {
-            if(isset($homes->file)){
-                DeleteOldFile::delete($homes->file);
+        
+        if ($request->hasFile('image')) {
+            unset($validateData['image']);
+            if(isset($homes->image)){
+                DeleteOldFile::delete($homes->image);
             }
-            $imageName = StoreFile::save($request->file, 'home');
-            $validateData['file'] = $imageName;
+            $imageName = StoreFile::save($request->image, 'homes');
+            $validateData['image'] = $imageName;
         }
+
+        $homes->fill($validateData);
         $homes->save();
-        $request->session()->flash('status', __('Home was Updated'));
+        $request->session()->flash('status', __('Home Page was Updated'));
 
         return back();
     }

@@ -18,5 +18,5 @@ class Contact extends Model
         'comment'
     ];
 
-    protected $perPage = 15;
+    protected $perPage = 10;
 }
