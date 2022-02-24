@@ -3,7 +3,10 @@
     <div class="row justify-content-center no-gutters d-flex align-items-stretch h-100">
     <div class="col-md-7 bg-login-register d-none d-md-block h-100">
         <img class="w-100 h-100" src="{{ asset('img/img.png') }}" alt="">
-        <img class="img-fluid hotline" src="{{ asset('img/hotline.png') }}" alt="">
+        <a href="tel:19456">     
+               <img class="img-fluid hotline" src="{{ asset('img/hotline.png') }}" alt="">
+        </a>
+
 
     </div>
         <div class="col-md-5">
