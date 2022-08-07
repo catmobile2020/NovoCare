@@ -38,3 +38,6 @@ Route::resource('abouts', 'AboutController');
 Route::resource('privacies', 'PrivacyController');
 
 Route::resource('terms', 'TermsController');
+
+Route::resource('activities', 'ActivityController');
+Route::resource('devices', 'DeviceController');

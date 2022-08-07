@@ -71,6 +71,16 @@
                     <i class="fas fa-list-ul"></i>
                     <span>Privacy Statement</span></a>
             </li>
+            <li class="nav-item {{ Route::currentRouteName() == 'activities.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('activities.index') }}">
+                    <i class="fas fa-list-ul"></i>
+                    <span>Activity</span></a>
+            </li>
+            <li class="nav-item {{ Route::currentRouteName() == 'devices.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('devices.index') }}">
+                    <i class="fas fa-list-ul"></i>
+                    <span>Devices</span></a>
+            </li>
             <hr class="sidebar-divider d-none d-md-block">
         </ul>
         <div id="content-wrapper" class="d-flex flex-column">
