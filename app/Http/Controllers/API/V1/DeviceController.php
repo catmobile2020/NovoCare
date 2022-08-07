@@ -29,8 +29,6 @@ class DeviceController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'mac_address'   => 'required|min:1|string|max:255',
-            'country'       => 'nullable|min:1|string|max:255',
-            'city'          => 'nullable|min:1|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -41,12 +39,7 @@ class DeviceController extends Controller
         }
 
         Device::updateOrCreate(
-            ['mac_address'      => $request->mac_address],
-            [
-                'mac_address'   => $request->mac_address,
-                'country'       => $request->country,
-                'city'          => $request->city
-            ]
+            ['mac_address'      => $request->mac_address]
         );
 
         return response()->json([

@@ -12,7 +12,6 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Screen</th>
-                                <th scope="col">City</th>
                                 <th scope="col">Count</th>
                                 <th scope="col">Created at</th>
                             </tr>
@@ -22,7 +21,6 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $activity->screen }}</td>
-                                    <td>{{ $activity->city }}</td>
                                     <td>{{ $activity->count }}</td>
                                     <td>{{ $activity->created_at }}</td>
                                 </tr>

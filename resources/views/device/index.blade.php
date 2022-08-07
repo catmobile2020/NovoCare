@@ -13,8 +13,6 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Device</th>
                                 <th scope="col">Device Type</th>
-                                <th scope="col">Country</th>
-                                <th scope="col">City</th>
                                 <th scope="col">Activity Count</th>
                                 <th scope="col">Created at</th>
                             </tr>
@@ -26,8 +24,6 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td><a href="{{ route('devices.show', $device->id) }}">Device {{ $device->id }}</a></td>
                                     <td>{{ Str::contains($device->mac_address, 'Android') ? 'Android' : 'IOS' }}</td>
-                                    <td>{{ $device->country }}</td>
-                                    <td>{{ $device->city }}</td>
                                     <td>{{ $device->activities->count() }}</td>
                                     <td>{{ $device->created_at }}</td>
                                 </tr>

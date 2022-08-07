@@ -45,7 +45,7 @@ class ActivityController extends Controller
         Activity::create([
             'device_id'     => $device->id,
             'screen'        => $request->screen,
-            'city'          => $device->city
+            'city'          => null
         ]);
 
         return response()->json([

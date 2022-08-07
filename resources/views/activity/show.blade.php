@@ -13,7 +13,6 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">{{ __('Device ID') }}</th>
                                 <th scope="col">{{ __('Screen') }}</th>
-                                <th scope="col">{{ __('City') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -23,7 +22,6 @@
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td>Device {{ $activity->device->id }}</td>
                                     <td>{{ $activity->screen }}</td>
-                                    <td>{{ $activity->city }}</td>
                                 </tr>
                             @empty
                                 <tr>
