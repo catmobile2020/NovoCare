@@ -18,7 +18,6 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $i = 1; ?>
                             @forelse ($devices as $device)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
