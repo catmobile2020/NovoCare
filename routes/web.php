@@ -43,7 +43,7 @@ Route::resource('activities', \App\Http\Controllers\ActivityController::class);
 Route::resource('devices', \App\Http\Controllers\DeviceController::class);
 
 Route::get('/optimize/clear', function () {
-    dd(\App\Device::delete(), \App\Activity::delete());
+    dd(\App\Device::truncate(), \App\Activity::truncate());
     \Artisan::call('cache:clear');
     \Artisan::call('view:clear');
     \Artisan::call('route:clear');
