@@ -20,7 +20,7 @@
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td><a href="{{ route('activities.show', $activity->screen) }}">{{ $activity->screen }}</a></td>
-                                    <td>{{ $activity->count }}</td>
+                                    <td>{{ $activity->count() }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
