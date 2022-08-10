@@ -33,7 +33,8 @@ Route::prefix('v1')->name('api.v1.')->namespace('API\V1')->group(function () {
     Route::post('contact/store', 'ContactController@store');
 
     Route::get('surveys', 'SurveyController@index');
-
+    Route::post('activities', [\App\Http\Controllers\API\V1\ActivityController::class, 'store']);
+    Route::post('devices', [\App\Http\Controllers\API\V1\DeviceController::class, 'store']);
     Route::fallback(function () {
         return response()->json([
             'message' => 'End Point Not found'
