@@ -39,8 +39,11 @@ Route::resource('privacies', 'PrivacyController');
 
 Route::resource('terms', 'TermsController');
 
-Route::resource('activities', \App\Http\Controllers\ActivityController::class);
-Route::resource('devices', \App\Http\Controllers\DeviceController::class);
+Route::get('activities', [\App\Http\Controllers\ActivityController::class, 'index']);
+Route::get('activities/{id}', [\App\Http\Controllers\ActivityController::class, 'show']);
+
+Route::get('devices', [\App\Http\Controllers\DeviceController::class, 'index']);
+Route::get('devices/{id}', [\App\Http\Controllers\DeviceController::class, 'show']);
 
 Route::get('/optimize/clear', function () {
 
