@@ -42,4 +42,12 @@ Route::resource('terms', 'TermsController');
 Route::resource('activities', \App\Http\Controllers\ActivityController::class);
 Route::resource('devices', \App\Http\Controllers\DeviceController::class);
 
-
+Route::get('/optimize/clear', function () {
+    \Artisan::call('cache:clear');
+    \Artisan::call('view:clear');
+    \Artisan::call('route:clear');
+    \Artisan::call('config:clear');
+    \Artisan::call('migrate');
+//        \Artisan::call('storage:link');
+    return redirect()->back()->with('status', 200);
+})->name('optimize.clear');
