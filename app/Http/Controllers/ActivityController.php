@@ -10,6 +10,7 @@ class ActivityController extends Controller
 {
     public function index(){
         $activities = Activity::select('*', DB::raw('COUNT(screen) as count'))->groupby('activities.screen')->distinct()->paginate(15);
+        dd($activities);
         return view('activity.index', compact('activities'));
     }
 
