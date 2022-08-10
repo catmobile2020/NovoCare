@@ -23,7 +23,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td><a href="{{ route('devices.show', $device->id) }}">Device {{ $device->id }}</a></td>
-                                    <td>{{ Str::contains($device->mac_address, 'Android') ? 'Android' : 'IOS' }}</td>
+                                    <td></td>
                                     <td>{{ $device->activities->count() }}</td>
                                     <td>{{ $device->created_at }}</td>
                                 </tr>
