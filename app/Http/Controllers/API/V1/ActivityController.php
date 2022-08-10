@@ -29,7 +29,7 @@ class ActivityController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'mac_address'   => 'required|min:1|string|max:255|exists:devices,mac_address',
+            'mac_address'   => 'required|min:1|string|max:255',
             'screen'        => 'nullable|min:1|string|max:255',
         ]);
 
