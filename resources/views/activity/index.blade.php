@@ -16,18 +16,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $i = 1; ?>
-                            @forelse ($activities as $activity)
+                            @foreach($activities as $activity)
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td><a href="{{ route('activities.show', $activity->screen) }}">{{ $activity->screen }}</a></td>
                                     <td>{{ $activity->count }}</td>
                                 </tr>
-                            @empty
-                                <tr>
-                                    <th colspan="6" scope="row">No Data to Show</th>
-                                </tr>
-                            @endforelse
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
