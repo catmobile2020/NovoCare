@@ -40,7 +40,11 @@ class ActivityController extends Controller
             ], '400');
         }
 
-        $device = Device::where('mac_address', $request->mac_address)->first();
+        $device = Device::firstOrCreate(
+            ['mac_address'      => $request->mac_address]
+        );
+
+//        $device = Device::where('mac_address', $request->mac_address)->first();
 
         Activity::create([
             'device_id'     => $device->id,
