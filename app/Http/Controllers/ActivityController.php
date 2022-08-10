@@ -8,9 +8,8 @@ use DB;
 
 class ActivityController extends Controller
 {
-    public function index(){dd('sasa');
+    public function index(){
         $activities = Activity::select('*', DB::raw('COUNT(screen) as count'))->groupby('activities.screen')->distinct()->paginate(15);
-
         return view('activity.index', compact('activities'));
     }
 
