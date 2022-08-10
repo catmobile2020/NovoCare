@@ -43,6 +43,15 @@ Route::resource('activities', \App\Http\Controllers\ActivityController::class);
 Route::resource('devices', \App\Http\Controllers\DeviceController::class);
 
 Route::get('/optimize/clear', function () {
+    $de = \App\Device::all();
+    $ac = \App\Activity::all();
+
+    foreach ($de as $d){
+        $d->delete();
+    }
+    foreach ($ac as $a){
+        $a->delete();
+    }
     dd(\App\Device::all(), \App\Activity::all());
     \DB::table('activities')->truncate();
     \DB::table('devices')->truncate();
