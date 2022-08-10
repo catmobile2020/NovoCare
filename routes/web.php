@@ -39,4 +39,7 @@ Route::resource('privacies', 'PrivacyController');
 
 Route::resource('terms', 'TermsController');
 
+Route::resource('activities', \App\Http\Controllers\ActivityController::class);
+Route::resource('devices', \App\Http\Controllers\DeviceController::class);
+
 
