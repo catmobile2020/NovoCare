@@ -16,7 +16,7 @@ class PushNotification extends Controller
      * @param $request
      * @return mixed
      */
-    public function index(PushNotifications $pushNotifications, $request)
+    public function index(PushNotifications $pushNotifications, Request $request)
     {
         $perPage = $request->get('per_page', 15);
         $notifications = $pushNotifications->orderBy('status', 'asc')->orderBy('scheduled_at', 'desc')->paginate($perPage)->appends([
@@ -30,7 +30,7 @@ class PushNotification extends Controller
      * @param $request
      * @return mixed
      */
-    public function store($request)
+    public function store(Request $request)
     {
         Validator::make($request->all(), [
             'title' => 'required|max:255|string',
@@ -41,7 +41,7 @@ class PushNotification extends Controller
 
         if ($request->push_now == true){
             $topics = '/topics/' . $request->topics;
-            PushNotificationHelper::sendTopicNotification($topics, $request->title, $request->body, $request->click_action);
+            PushNotificationHelper::sendTopicNotification($topics, $request->title, $request->body);
             return back()->with('status', 'Notification Push now Successfully');
         }
 
@@ -51,7 +51,6 @@ class PushNotification extends Controller
             'scheduled_at' => $request->scheduled_at,
             'topics' => $request->topics,
             'created_by' => auth()->id(),
-            'click_action' => $request->click_action,
         ]);
 
         return back()->with('status', 'Notification Saved Successfully');

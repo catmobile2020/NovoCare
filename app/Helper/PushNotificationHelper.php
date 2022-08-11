@@ -8,16 +8,13 @@ class PushNotificationHelper
 {
     const FCM_URL = "https://fcm.googleapis.com/fcm/send";
 
-    public static function sendTopicNotification($topic, $title, $body, $click_action = 'RESULT', $action_type = null, $action_id = null, $unreadNotificationsNumber = 1)
+    public static function sendTopicNotification($topic, $title, $body, $unreadNotificationsNumber = 1)
     {
         $message = [
             "to" => $topic,
             "data" => [
                 "title" => $title,
-                "body" => $body,
-                "click_action" => $click_action,
-                "action_type" => $action_type,
-                "action_id" => $action_id,
+                "body" => $body
             ],
             "notification" => [
                 "title" => $title,
@@ -26,10 +23,7 @@ class PushNotificationHelper
                 'notification_count' => $unreadNotificationsNumber,
                 "topic" => $topic,
                 "vibrate" => true,
-                "sound" => true,
-                "click_action" => $click_action,
-                "action_type" => $action_type,
-                "action_id" => $action_id,
+                "sound" => true
             ]
         ];
         return self::sendNotification(json_encode($message));

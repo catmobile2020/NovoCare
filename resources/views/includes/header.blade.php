@@ -58,33 +58,36 @@
             </li>
             <li class="nav-item {{ Route::currentRouteName() == 'abouts.edit' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('abouts.edit', '1') }}">
-                    <i class="fas fa-list-ul"></i>
+                    <i class="fas fa-table"></i>
                     <span>About App</span></a>
             </li>
             <li class="nav-item {{ Route::currentRouteName() == 'terms.edit' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('terms.edit', '1') }}">
-                    <i class="fas fa-list-ul"></i>
+                    <i class="fas fa-table"></i>
                     <span>Terms of Use </span></a>
             </li>
             <li class="nav-item {{ Route::currentRouteName() == 'privacies.edit' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('privacies.edit', '1') }}">
-                    <i class="fas fa-list-ul"></i>
+                    <i class="fas fa-table"></i>
                     <span>Privacy Statement</span></a>
             </li>
-            <li class="nav-item {{ Route::currentRouteName() == 'activities.index' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('activities.index') }}">
-                    <i class="fas fa-list-ul"></i>
-                    <span>Activity</span></a>
+            <li class="nav-item {{ Route::currentRouteName() == 'activities.index' ? 'active' : '' }} {{ Route::currentRouteName() == 'devices.index' ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#activity"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-desktop"></i>
+                    <span>Activity</span>
+                </a>
+                <div id="activity" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('activities.index') }}">Activity</a>
+                        <a class="collapse-item" href="{{ route('devices.index') }}">Devices</a>
+                    </div>
+                </div>
             </li>
-            <li class="nav-item {{ Route::currentRouteName() == 'devices.index' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('devices.index') }}">
-                    <i class="fas fa-list-ul"></i>
-                    <span>Devices</span></a>
-            </li>
-            <li class="nav-item {{ Route::currentRouteName() == 'devices.index' ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('devices.index') }}">
-                    <i class="fas fa-list-ul"></i>
-                    <span>Devices</span></a>
+            <li class="nav-item {{ Route::currentRouteName() == 'notifications.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('notifications.index') }}">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
         </ul>

@@ -45,6 +45,9 @@ Route::get('activities/{id}', [\App\Http\Controllers\ActivityController::class, 
 Route::get('devices', [\App\Http\Controllers\DeviceController::class, 'index'])->name('devices.index');
 Route::get('devices/{id}', [\App\Http\Controllers\DeviceController::class, 'show'])->name('devices.show');
 
+Route::get('notifications', [\App\Http\Controllers\PushNotification::class, 'index'])->name('notifications.index');
+Route::post('notifications', [\App\Http\Controllers\PushNotification::class, 'store'])->name('notifications.store');
+
 Route::get('/optimize/clear', function () {
 
     \Artisan::call('cache:clear');

@@ -13,9 +13,11 @@ class PushNotifications extends Model
     public static function getTopics()
     {
         return $data = [
-            "0"=>"web",
             "1"=>"android",
             "2"=>"apple"
         ];
+    }
+    public function user(){
+        return $this->belongsTo(User::class, 'created_by');
     }
 }
